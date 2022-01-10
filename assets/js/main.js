@@ -7,13 +7,19 @@ elChangeTheme.addEventListener('click', () => {
   document.body.classList.toggle('dark-theme')
   elChangeTheme.classList.toggle('bx-sun')
 });
+let elMenu = document.querySelector('.nav__menu');
 
 document.querySelector('.bx-menu').addEventListener('click', () => {
-  let elMenu = document.querySelector('.nav__menu');
   elMenu.classList.toggle('show-menu')
 });
 
+let ElItem = document.querySelectorAll('.nav__item');
 
+ElItem.forEach(item => {
+  item.addEventListener('click', () => {
+    elMenu.classList.remove('show-menu')
+  })
+})
 
 const links = document.querySelectorAll('.nav__link');
 const sections = document.querySelectorAll('section');
